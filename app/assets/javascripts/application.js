@@ -20,3 +20,5 @@
 //= require pos
 Pos = Ember.Application.create();
 //= require_tree .
+
+$(document).foundation();

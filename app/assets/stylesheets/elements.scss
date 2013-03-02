@@ -1,0 +1,7 @@
+button {
+	@include button-base;
+  @include button-size;
+  @include button-style;
+  @include radius;
+  @include single-transition;
+}
