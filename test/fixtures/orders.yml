@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_email: MyString
+  paid: false
+  hold: false
+  subtotal_cents: 1
+  tax_cents: 1
+  total_cents: 1
+
+two:
+  customer_email: MyString
+  paid: false
+  hold: false
+  subtotal_cents: 1
+  tax_cents: 1
+  total_cents: 1
