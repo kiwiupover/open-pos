@@ -95,6 +95,7 @@ GEM
     net-ssh (2.6.5)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.12)
       coderay (~> 1.0.5)
@@ -166,6 +167,7 @@ DEPENDENCIES
   ember-rails
   filepicker-rails
   jquery-rails
+  pg
   pry
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
