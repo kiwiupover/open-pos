@@ -10,10 +10,10 @@ Pos.OrderController = Ember.ObjectController.extend({
     });
 	},
 	tax: function() {
-    return this.cents * 0.095
+    return  parseInt(this.get('cents') * 0.095)
   }.property('cents'),
 
   total: function() {
-    return this.cents + this.tax
+    return  parseInt(this.get('cents') + this.get('tax'))
   }.property('cents', 'tax')
 });
