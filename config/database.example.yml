@@ -1,0 +1,19 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: pos_development
+  pool: 5
+  username: blog
+  password: changeme
+  host: localhost
+  port: 5432
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: foo_test
+  pool: 5
+  username: postgres
+  password: changeme
+  host: localhost
+  port: 5432
