@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @admin_product.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @admin_product.description %>
+</p>
+
+<p>
+  <b>Upc code:</b>
+  <%= @admin_product.upc_code %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @admin_product.price %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @admin_product.category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_product_path(@admin_product) %> |
+<%= link_to 'Back', admin_products_path %>

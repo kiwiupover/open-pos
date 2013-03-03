@@ -1,0 +1,31 @@
+<h1>Listing admin_products</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Upc code</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_products.each do |admin_product| %>
+  <tr>
+    <td><%= admin_product.name %></td>
+    <td><%= admin_product.description %></td>
+    <td><%= admin_product.upc_code %></td>
+    <td><%= admin_product.price %></td>
+    <td><%= admin_product.category_id %></td>
+    <td><%= link_to 'Show', admin_product %></td>
+    <td><%= link_to 'Edit', edit_admin_product_path(admin_product) %></td>
+    <td><%= link_to 'Destroy', admin_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_admin_product_path %>

@@ -1,4 +1,14 @@
 Pos::Application.routes.draw do
+  namespace :admin do
+    resources :products
+  end
+
+
+  namespace :admin do
+    resources :categories
+  end
+
+
   resources :categories
 
 
