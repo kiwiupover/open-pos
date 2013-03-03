@@ -5,7 +5,11 @@ Pos::Application.routes.draw do
   resources :line_items
 
 
-  resources :orders
+  resources :orders do
+    member do
+      get 'remove_item'
+    end
+  end
 
 
   resources :products

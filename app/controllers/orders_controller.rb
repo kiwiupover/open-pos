@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = Orders.new(params[:order])
+    order = Order.new(params[:order])
     if order.save
       render json: order, status: :created
     else
@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
   end
 
   def update
-    order = Orders.find(params[:id])
+    order = Order.find(params[:id])
     if order.update_attributes(params[:order])
       render json: order, status: :ok
     else
@@ -28,9 +28,16 @@ class OrdersController < ApplicationController
     end
   end
 
+  def remove_item
+    order = Order.find(params[:id])
+    order.line_items.where(product_id: params[:product_id]).delete_all
+    render json: nil, status: :ok
+  end
+
   def destroy
-    order = Orders.find(params[:id])
+    order = Order.find(params[:id])
     order.destroy
     render json: nil, status: :ok
   end
+
 end
