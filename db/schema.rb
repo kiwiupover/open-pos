@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(:version => 20130303003329) do
 
   create_table "orders", :force => true do |t|
     t.string   "customer_email"
-    t.boolean  "paid"
-    t.boolean  "hold"
+    t.boolean  "paid", default: false
+    t.boolean  "hold", default: false
     t.integer  "subtotal_cents"
     t.integer  "tax_cents"
     t.integer  "total_cents"

@@ -2,6 +2,8 @@ class Order < ActiveRecord::Base
   has_many :line_items
   has_many :products, through: :line_items
   attr_accessible :customer_email, :hold, :paid, :subtotal_cents, :tax_cents, :total_cents
+  scope :all_open, where("paid != 't' AND hold != 't'")
+  scope :all_held, where("hold = 't' AND paid != 't'")
 
   def subtotal
     subtotal_cents/100.0
