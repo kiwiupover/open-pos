@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  image: MyString
+
+two:
+  name: MyString
+  image: MyString
+
+# == Schema Information
+#
+# Table name: categories
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  image      :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
