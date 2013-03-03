@@ -1,8 +1,7 @@
 <div class="row">
 	<div class="reciept">
 		<ul class="no-bullet">
-
-			{{#each lineItem in controller}}
+			{{#each lineItem}}
 		    <li><h4>{{lineItem.productId}} <span>${{money cents}}</span></h4></li>
 	    {{else}}
 		    <ul>

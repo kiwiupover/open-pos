@@ -49,4 +49,10 @@ class OrdersController < ApplicationController
     render json: nil, status: :ok
   end
 
+  def current
+    open_orders = Order.all_open
+    order = (open_orders.first if open_orders.size > 0) || Order.create
+    render json: order
+  end
+
 end

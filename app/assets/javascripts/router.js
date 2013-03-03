@@ -4,6 +4,7 @@ Pos.Router.map(function() {
     	this.route('edit');
     });
     this.route('new');
+    this.route('current');
   });
 	// this.resource('categories', function() {
 	// 	this.resource('category', {path:':category_id'});

@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="reciept">
+		<div class="panel">
+			<ul class="no-bullet">
+				{{#each lineItems}}
+					<li><h6>{{name}} <span>${{money priceCents}}</span></h6></li>
+				{{/each}}
+				Sub Total ${{money cents}}</br>
+				Tax: ${{money tax}}</br>
+		    <li id="total"><h3>Total <span>${{money total}}</span></h3></li>
+			</ul>
+		</div>
+
+
+	</div>
+	<div class="products">
+		{{render 'category'}}
+		{{outlet}}
+	</div>
+	<div class="categories">
+		{{render 'categories'}}
+	</div>
+</div>
