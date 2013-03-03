@@ -1,5 +1,6 @@
 Pos.ApplicationRoute = Ember.Route.extend({
-  // redirect: function() {
-  //   this.transitionTo('orders');
-  // }
+  setupController: function() {
+    this.controllerFor('categories').set('model', Pos.Category.find());
+    this.controllerFor('category').set('model', Pos.Category.find(1));
+  }
 });

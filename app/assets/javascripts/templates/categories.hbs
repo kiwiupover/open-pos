@@ -1,14 +1,5 @@
-<div class="row">
-	<div class="products">
-		<h2>Products</h2>
-		{{outlet}}
-	</div>
-	<div class="categories">
-		<ul class="no-bullet">
-			{{#each category in content}}
-				{{#linkTo category category}}<li>{{category.name}}</li>{{/linkTo}}
-			{{/each}}
-		</ul>
-	</div>
-</div>
-
+<ul class="no-bullet">
+	{{#each category in content}}
+		<a href="#" {{action changeView category.id}}><li>{{category.name}}</li></a>
+	{{/each}}
+</ul>

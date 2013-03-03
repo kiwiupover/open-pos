@@ -1,13 +1,15 @@
-<h2>{{name}}</h2>
+<h3>{{name}}</h3>
 
 <ul class = "products-list">
-	{{#each products}}
+	{{#each product in products}}
 		<li>
-			<div class="panel">
-				<h4>{{name}} </h4>
-				<p>{{description}}</p>
-				<strong>${{money priceCents}}</strong>
-			</div>
+			<a href="#" {{action "addListItem" this}}>
+				<div class="panel">
+					<h4>{{product.name}} </h4>
+					<p>{{product.description}}</p>
+					<strong>${{money product.priceCents}}</strong>
+				</div>
+			</a>
 		</li>
 	{{/each}}
 </ul>

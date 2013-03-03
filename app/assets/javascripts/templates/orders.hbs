@@ -1,3 +1,19 @@
-Orders
+<div class="row">
+	<div class="reciept">
+		<ul class="no-bullet">
+			{{#each listItem in tabItems}}
+		    <li><h4>{{listItem.food.name}} <span>${{money listItem.cents}}</span></h4></li>
+	    {{else}}
+		    <li><h4>Ready to add Products</h4></li>
+	    {{/each}}
+	    <li id="total"><h3>Total <span>${{money cents}}</span></h3></li>
+		</ul>
 
-{{outlet}}
+	</div>
+	<div class="products">
+		{{render 'category'}}
+	</div>
+	<div class="categories">
+		{{render 'categories'}}
+	</div>
+</div>

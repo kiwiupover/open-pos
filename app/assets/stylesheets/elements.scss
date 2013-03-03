@@ -5,11 +5,14 @@ button {
   @include radius;
   @include single-transition;
 }
+.reciept {
+	@include grid-column(3, $float:left);
+}
 .products {
-	@include grid-column(9, $float:left);
+	@include grid-column(7, $float:left);
 }
 .categories {
-	@include grid-column(3, $float:left);
+	@include grid-column(2, $float:left);
 }
 
 .products-list {
