@@ -30,6 +30,8 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    annotate (2.5.0)
+      rake
     arel (3.0.2)
     barber (0.4.1)
       ember-source
@@ -135,6 +137,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   better_errors
   coffee-rails (~> 3.2.1)
   ember-rails

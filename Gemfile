@@ -25,6 +25,7 @@ gem 'jquery-rails'
 
 group :development do
   gem "better_errors"
+  gem 'annotate'
 end
 
 gem 'ember-rails'
