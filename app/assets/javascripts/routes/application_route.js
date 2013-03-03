@@ -1,5 +1,5 @@
 Pos.ApplicationRoute = Ember.Route.extend({
-  redirect: function() {
-    this.transitionTo('tables');
-  }
+  // redirect: function() {
+  //   this.transitionTo('orders');
+  // }
 });

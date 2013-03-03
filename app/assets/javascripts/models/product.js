@@ -4,5 +4,7 @@ Pos.Product = DS.Model.extend({
   priceCents: DS.attr('number'),
   category: DS.attr('string'),
   upcCode: DS.attr('string'),
-  image: DS.attr('string')
+  image: DS.attr('string'),
+
+  category: DS.belongsTo('Pos.Category')
 });

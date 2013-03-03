@@ -5,3 +5,16 @@ button {
   @include radius;
   @include single-transition;
 }
+.products {
+	@include grid-column(9, $float:left);
+}
+.categories {
+	@include grid-column(3, $float:left);
+}
+
+.product-list {
+	$per-row: 3;
+	$spacing: $block-grid-default-spacing;
+	$base-style: true;
+	@import block-grid($per-row, $spacing, $base-styles);
+}

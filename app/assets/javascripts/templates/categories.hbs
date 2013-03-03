@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="products">
+		<h2>Products</h2>
+		{{outlet}}
+	</div>
+	<div class="categories">
+		<ul class="no-bullet">
+			{{#each category in content}}
+				<li>{{category.name}}</li>
+			{{/each}}
+		</ul>
+	</div>
+</div>
+
