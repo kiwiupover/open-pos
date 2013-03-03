@@ -6,7 +6,7 @@
 	<div class="categories">
 		<ul class="no-bullet">
 			{{#each category in content}}
-				<li>{{category.name}}</li>
+				{{#linkTo category category}}<li>{{category.name}}</li>{{/linkTo}}
 			{{/each}}
 		</ul>
 	</div>

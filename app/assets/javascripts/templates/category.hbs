@@ -1,11 +1,13 @@
 <h2>{{name}}</h2>
 
-<ul class"small-block-grid-2 large-block-grid-4">
+<ul class = "products-list">
 	{{#each products}}
 		<li>
-			<h4>{{name}} </h4>
-			<p>{{description}}</p>
-			<strong>${{money priceCents}}</strong>
+			<div class="panel">
+				<h4>{{name}} </h4>
+				<p>{{description}}</p>
+				<strong>${{money priceCents}}</strong>
+			</div>
 		</li>
 	{{/each}}
 </ul>

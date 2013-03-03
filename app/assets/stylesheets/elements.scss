@@ -12,9 +12,12 @@ button {
 	@include grid-column(3, $float:left);
 }
 
-.product-list {
+.products-list {
 	$per-row: 3;
 	$spacing: $block-grid-default-spacing;
-	$base-style: true;
-	@import block-grid($per-row, $spacing, $base-styles);
+	$base-styles: true;
+	@include block-grid($per-row, $spacing, $base-styles);
+	li {
+		padding: 10px;
+	}
 }
