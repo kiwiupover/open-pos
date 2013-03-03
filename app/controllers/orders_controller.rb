@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
 
   def index
-    orders = Order.all
-    render json: orders
+    open_orders = Order.all_open
+    order = (open_orders.first if open_orders.size > 0) || Order.create
+    render json: order
   end
 
 	def show
