@@ -10,6 +10,14 @@ class OrdersController < ApplicationController
     render json: order
   end
 
+  def receipt
+    @order = Order.find(params[:id])
+  end
+
+  def thanks #TEMPORARY
+    @order = Order.find(params[:id])
+  end
+
   def create
     order = Order.new(params[:order])
     if order.save

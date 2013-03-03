@@ -7,15 +7,15 @@ class Order < ActiveRecord::Base
   scope :all_paid, where(paid: true)
 
   def subtotal
-    subtotal_cents/100.0
+    subtotal_cents/100.0 if subtotal_cents
   end
 
   def tax
-    tax_cents/100.0
+    tax_cents/100.0 if tax_cents
   end
 
   def total
-    total_cents/100.0
+    total_cents/100.0 if total_cents
   end
 
 end

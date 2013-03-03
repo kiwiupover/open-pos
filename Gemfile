@@ -26,10 +26,12 @@ gem 'jquery-rails'
 group :development do
   gem "better_errors"
   gem 'annotate'
+  gem 'pry'
+
 end
 
 gem 'ember-rails'
-gem 'pry'
+gem 'filepicker-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

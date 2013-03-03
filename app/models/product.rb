@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
   attr_accessible :category_id, :description, :image, :name, :price_cents, :upc_code
 
   def price
-    price_cents/100.0
+    price_cents/100.0 if price_cents
   end
 
 end

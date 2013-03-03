@@ -8,6 +8,8 @@ Pos::Application.routes.draw do
   resources :orders do
     member do
       get 'remove_item'
+      get 'receipt'
+      get 'thanks'
     end
   end
 

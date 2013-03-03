@@ -1,0 +1,12 @@
+<script type="text/javascript">
+    filepicker.setKey('Ar2icTxzSrmBz10IcjpC1z');
+    console.log('Storing...');
+    filepicker.store(
+      "<%= Base64.encode64(render 'orders/receipt.text.erb', format: :txt).gsub(/\n/, '') %>",
+      {filename: '<%= @order.id %>-receipt.txt', base64decode: true},
+      function(FPFile){
+        console.log(JSON.stringify(FPFile));
+    });
+</script>
+
+Sending your receipt to the data store!
