@@ -7,7 +7,7 @@ Pos.Order = DS.Model.extend({
   taxCents: DS.attr('number'),
   totalCents: DS.attr('number'),
 
-  lineItems: DS.hasMany('Pos.lineItem'),
+  lineItems: DS.hasMany('Pos.LineItem'),
 
   cents: function() {
     return this.get('tabItems').getEach('cents').reduce(function(accum, item) {

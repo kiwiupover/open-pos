@@ -3,5 +3,7 @@ Pos.LineItem = DS.Model.extend({
   orderId: DS.attr('number'),
   quantity: DS.attr('number'),
   priceCents: DS.attr('number'),
-  extendedCents: DS.attr('number')
+  extendedCents: DS.attr('number'),
+
+  order: DS.belongsTo('Pos.Order')
 });

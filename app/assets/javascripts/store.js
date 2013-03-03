@@ -7,3 +7,7 @@ Pos.Store = DS.Store.extend({
 DS.RESTAdapter.map('Pos.Category', {
   products: { embedded: 'always'}
 });
+
+DS.RESTAdapter.map('Pos.Order', {
+  lineItems: { embedded: 'always'}
+});

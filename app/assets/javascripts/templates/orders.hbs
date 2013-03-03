@@ -1,17 +1,22 @@
 <div class="row">
 	<div class="reciept">
 		<ul class="no-bullet">
-			{{#each listItem in tabItems}}
-		    <li><h4>{{listItem.food.name}} <span>${{money listItem.cents}}</span></h4></li>
+
+			{{#each lineItem in controller}}
+		    <li><h4>{{lineItem.productId}} <span>${{money cents}}</span></h4></li>
 	    {{else}}
-		    <li><h4>Ready to add Products</h4></li>
+		    <ul>
+					{{#each order in controller}}
+						<li>{{#linkTo order order}}{{order.customerEmail}}{{/linkTo}}</li>
+					{{/each}}
+				</ul>
 	    {{/each}}
 	    <li id="total"><h3>Total <span>${{money cents}}</span></h3></li>
 		</ul>
 
 	</div>
 	<div class="products">
-		{{render 'category'}}
+		{{outlet}}
 	</div>
 	<div class="categories">
 		{{render 'categories'}}

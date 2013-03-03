@@ -18,7 +18,9 @@
 //= require ember-data
 //= require_self
 //= require pos
-Pos = Ember.Application.create();
+Pos = Ember.Application.create({
+  LOG_TRANSITIONS: true,
+});
 //= require_tree .
 
 $(document).foundation();
