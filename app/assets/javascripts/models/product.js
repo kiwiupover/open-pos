@@ -6,5 +6,6 @@ Pos.Product = DS.Model.extend({
   upcCode: DS.attr('string'),
   image: DS.attr('string'),
 
-  category: DS.belongsTo('Pos.Category')
+  category: DS.belongsTo('Pos.Category'),
+  lineItems: DS.hasMany('Pos.lineItem')
 });

@@ -10,8 +10,10 @@ Pos.Order = DS.Model.extend({
   lineItems: DS.hasMany('Pos.LineItem'),
 
   cents: function() {
-    return this.get('tabItems').getEach('cents').reduce(function(accum, item) {
+    return this.get('lineItems').getEach('priceCents').reduce(function(accum, item) {
       return accum + item;
     }, 0);
   }.property('lineItems.@each.cents')
+
+
 });
