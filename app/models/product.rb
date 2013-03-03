@@ -1,8 +1,13 @@
 class Product < ActiveRecord::Base
-  belongs_to :cateogry
+  belongs_to :category
   has_many :line_items
   has_many :orders, through: :line_items
   attr_accessible :category_id, :description, :image, :name, :price_cents, :upc_code
+
+  def price
+    price_cents/100.0
+  end
+
 end
 
 # == Schema Information

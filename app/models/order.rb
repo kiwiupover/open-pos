@@ -2,6 +2,19 @@ class Order < ActiveRecord::Base
   has_many :line_items
   has_many :products, through: :line_items
   attr_accessible :customer_email, :hold, :paid, :subtotal_cents, :tax_cents, :total_cents
+
+  def subtotal
+    subtotal_cents/100.0
+  end
+
+  def tax
+    tax_cents/100.0
+  end
+
+  def total
+    total_cents/100.0
+  end
+
 end
 
 # == Schema Information
