@@ -7,13 +7,13 @@
   </div>
 </div>
 <div class='row'>
-	<form>
-		{{view Ember.TextField valueBinding="amountTendered" id="amount-tendered" placeholder="$The Amount Tendered" required="true"}}
-  	<button {{action tender target='controller'}} class="button small">Tender</button>
-  	<h5>Change Due: {{changeDue}}</h5>
-	</form>
-	{{total}}
-
+	<div class='twelve columns'>
+		<form>
+			{{view Ember.TextField valueBinding="amountTendered" placeholder="The Amount Tendered" required="true"}}
+			<h5>Change Due: {{money changeDue}}</h5>
+	  	<button {{action tender target='controller'}} class="button small">Tender</button>
+		</form>
+	</div>
 </div>
 
 

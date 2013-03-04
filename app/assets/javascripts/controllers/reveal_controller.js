@@ -1,1 +1,3 @@
-Pos.RevealController = Em.ObjectController.extend();
+Pos.RevealController = Em.ObjectController.extend({
+
+});
