@@ -1,1 +1,15 @@
-dskajlsfjas
+
+<div class='row'>
+  <div class='twelve columns'>
+    <button {{action mark_paid}} class="button small">Credit Card</button>
+    <button {{action mark_paid}} class="button small">Check</button>
+    <button {{action mark_paid}} class="button small">Exact Cash</button>
+  </div>
+</div>
+<div class='row'>
+  <input type="text" id="amount-tendered">
+  <button {{action tender}} class="button small">Tender</button>
+  <h5>Change Due: {{changeDue}}</h5>
+</div>
+
+
