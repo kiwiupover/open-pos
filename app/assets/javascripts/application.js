@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= jquery.foundation.reveal
 //= require ember
 //= require ember-data
 //= require_self
