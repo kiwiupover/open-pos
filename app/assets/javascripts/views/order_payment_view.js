@@ -1,5 +1,8 @@
 Pos.OrderPaymentView = Ember.View.extend({
 	didInsertElement: function() {
-		this.$('#payments').reveal();
+		this.$('input').val("");
+		this.$('#payments').reveal({
+			closeOnBackgroundClick: false
+		});
 	}
 });

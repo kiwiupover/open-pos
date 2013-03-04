@@ -9,11 +9,11 @@
 	<div class='row'>
 		<div class='twelve columns'>
 			<form>
-				{{view Ember.TextField valueBinding="amountTendered" placeholder="The Amount Tendered" required="true"}}
+				{{view Ember.TextField valueBinding="amountTendered" id="tender-amount" placeholder="The Amount Tendered" required="true"}}
 				<h5>Change Due: {{money changeDue}}</h5>
 		  	<button {{action 'tender' target='controller'}} class="button small">Tender</button>
 			</form>
 		</div>
 	</div>
-	<a class="close-reveal-modal">&#215;</a>
+	<a {{action closeModal}} class="close-reveal-modal">&#215;</a>
 </div>

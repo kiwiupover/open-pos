@@ -14,6 +14,10 @@ Pos.OrderPaymentController = Ember.ObjectController.extend({
 
   tender: function() {
   	this.get('controllers.order').send('tender')
-	}
+	},
+  closeModal: function () {
+    var order = this.get('controllers.order').get('model');
+    return this.transitionTo('order', order);
+  }
 
 });
