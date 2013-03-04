@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "TradeGothic";
+  font-weight: normal;
+   font-style: normal;
+          src: font-url("trade-gothic/standard/tradegothicltstd.eot");
+          src: font-url("trade-gothic/standard/tradegothicltstd.eot?#iefix") format("eot"),
+               font-url("trade-gothic/standard/tradegothicltstd.ttf") format("truetype"),
+               font-url("trade-gothic/standard/tradegothicltstd.otf") format("opentype");
+}
 // Required global settings and mixins for Foundation
 @import "foundation/foundation-global";
 
@@ -18,6 +27,7 @@
 // $body-bg: #fff;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: TradeGothic, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 

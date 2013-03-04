@@ -8,17 +8,20 @@ button {
 }
 
 .main-body {
-	background: #34495e;
+	background: #2c3e50;
 	color: #fff;
-	margin-top: 20px;
+	margin: 20px auto;
+	border-radius: 5px;
 }
 .reciept {
 	@include grid-column(3, $float:left);
+	border-radius: 5px 0 0 5px;
 	padding-top: 12px;
 	background: #2c3e50;
 	li {
 		border-bottom: 1px solid darken(#2c3e50, 4%);
 		h6 {
+			font-family: $header-font-family;
 			font-weight: normal;
 			font-size: 14px;
 			color:#fff;
@@ -42,15 +45,22 @@ button {
 			text-align: center;
 			color: #fff;
 			font-size: 20px;
+			font-family: $header-font-family;
 		}
 	}
 
 
 }
+.dashboard {
+	background: #34495e;
+	@include grid-column(9, $float:left);
+	border-radius: 0 5px 5px 0;
+}
 .products {
-	@include grid-column(7, $float:left);
+	@include grid-column(9, $float:left);
 	h3 {
 		color: #ecf0f1;
+		font-family: $header-font-family;
 	}
 	.panel {
 		background: #3498db;
@@ -61,6 +71,7 @@ button {
 			font-size: 20px;
 			letter-spacing: -1px;
 			font-weight: normal;
+			font-family: $header-font-family;
 		}
 		p {
 			line-height: 1.2;
@@ -85,8 +96,9 @@ button {
 		padding: 10px 0;
 		font-weight: bold;
 		margin-top: 6px;
+		font-family: $header-font-family;
 	}
-	@include grid-column(2, $float:left);
+	@include grid-column(3, $float:left);
 }
 .padding {
 	padding: 20px;

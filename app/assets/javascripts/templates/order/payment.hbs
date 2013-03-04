@@ -1,19 +1,15 @@
 <div id="payments" class='reveal-modal expand'>
-	<div class='row'>
-	  <div class='ten columns text-center'>
-	    <button {{action 'tender' target='controller'}} class="button small">Credit Card</button>
-	    <button {{action 'tender' target='controller'}} class="button small">Check</button>
-	    <button {{action 'tender' target='controller'}} class="button small">Exact Cash</button>
-	  </div>
-	</div>
-	<div class='row'>
-		<div class='twelve columns'>
-			<form>
-				{{view Ember.TextField valueBinding="amountTendered" id="tender-amount" placeholder="The Amount Tendered" required="true"}}
-				<h5>Change Due: {{money changeDue}}</h5>
-		  	<button {{action 'tender' target='controller'}} class="button small">Tender</button>
-			</form>
-		</div>
+  <div class='ten columns text-center'>
+    <button {{action 'tender' target='controller'}} class="button small">Credit Card</button>
+    <button {{action 'tender' target='controller'}} class="button small">Check</button>
+    <button {{action 'tender' target='controller'}} class="button small">Exact Cash</button>
+  </div>
+	<div class='twelve columns'>
+		<form>
+			{{view Ember.TextField valueBinding="amountTendered" id="tender-amount" placeholder="The Amount Tendered" required="true"}}
+			<h5>Change Due: {{money changeDue}}</h5>
+	  	<button {{action 'tender' target='controller'}} class="button">Tender</button>
+		</form>
 	</div>
 	<a {{action closeModal}} class="close-reveal-modal">&#215;</a>
 </div>

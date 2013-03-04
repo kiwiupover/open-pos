@@ -19,11 +19,14 @@
 			</div>
 
 	</div>
-	<div class="products">
-		{{render 'category'}}
-		{{outlet}}
+	<div class="dashboard">
+		<div class="products">
+			{{render 'category'}}
+			{{outlet}}
+		</div>
+		<div class="categories">
+			{{render 'categories'}}
+		</div>
 	</div>
-	<div class="categories">
-		{{render 'categories'}}
-	</div>
+
 </div>
