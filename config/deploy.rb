@@ -10,7 +10,7 @@ set :use_sudo, false
 
 set :scm, "git"
 set :repository, "git@github.com:kiwiupover/open-pos.git"
-set :branch, "master"
+set :branch, "develop"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
