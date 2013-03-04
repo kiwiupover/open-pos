@@ -4,6 +4,7 @@ Pos.OrdersNewController = Ember.ObjectController.extend({
     		lineItems = order.get('lineItems');
     lineItems.createRecord({
       isNew: true,
+      quantity: 1,
       productId: item.id,
       name: item.get('name'),
       priceCents: item.get('priceCents')

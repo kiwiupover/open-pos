@@ -7,5 +7,6 @@ Pos.LineItem = DS.Model.extend({
   name: DS.attr('string'),
 
   order: DS.belongsTo('Pos.Order'),
-  product: DS.belongsTo('Pos.Order')
+  product: DS.belongsTo('Pos.Order'),
+
 });

@@ -4,7 +4,7 @@
 			<ul class="no-bullet">
         {{view Ember.TextField valueBinding="customerEmail" placeholder="Customer Email."}}
 				{{#each lineItems}}
-					<li><h6>{{name}} <span>${{money priceCents}}</span></h6></li>
+					<li>{{productId}}  <h6> {{name}}</h6> {{quantity}} X <span>${{money priceCents}}</span></li>
 				{{/each}}
 				Sub Total ${{money cents}}</br>
 				Tax: ${{money tax}}</br>

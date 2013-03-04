@@ -5,7 +5,7 @@
 		<li>
 			<a href="#" {{action "addListItem" product}}>
 				<div class="panel">
-					<h4>{{product.name}} </h4>
+					<h4>{{product.name}} <small>{{product.id}}</small></h4>
 					<p>{{product.shortDescription}}</p>
 					<strong>${{money product.priceCents}}</strong>
 				</div>

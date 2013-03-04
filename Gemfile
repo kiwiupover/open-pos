@@ -12,7 +12,7 @@ group :assets do
   gem 'compass-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'zurb-foundation'
+  gem 'zurb-foundation', '~> 3.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

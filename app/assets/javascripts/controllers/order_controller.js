@@ -2,11 +2,22 @@ Pos.OrderController = Ember.ObjectController.extend({
   addListItem: function(item) {
     var order = this.controllerFor('order').get('model'),
         lineItems = order.get('lineItems');
-    lineItems.createRecord({
-      isNew: true,
-      productId: item.id,
-      name: item.get('name'),
-      priceCents: item.get('priceCents')
+
+
+    lineItems.forEach(function(lineItem) {
+      if(lineItem.get('productId') === parseInt(item.id)) {
+        var q = lineItem.get('quantity');
+        var qq = q+1;
+        lineItem.set('quantity', qq);
+      } else if (!lineItem.get('productId') !== parseInt(item.id)) {
+        lineItems.createRecord({
+          isNew: true,
+          productId: item.id,
+          quantity: 1,
+          name: item.get('name'),
+          priceCents: item.get('priceCents')
+        });
+      }
     });
     this.store.commit();
   },
@@ -28,5 +39,10 @@ Pos.OrderController = Ember.ObjectController.extend({
     // this.set('totalCents', this.total);
     this.store.commit();
     return this.transitionTo('orders.new');
-  }
+  },
+  // lineItemQuantity: function() {
+  //   var q = lineItem.get('quantity');
+  //   return lineItem.set('quantity', q++);
+  //   return lineItem.get('quantity');
+  // }.property('quantity')
 });
