@@ -1,5 +1,5 @@
 <ul class="no-bullet">
 	{{#each category in content}}
-		<a href="#" {{action changeView category.id}}><li>{{category.name}}</li></a>
+		<a href="#" {{action changeView category.id}} class='button' style='width: 200px;'><li>{{category.name}}</li></a>
 	{{/each}}
 </ul>
