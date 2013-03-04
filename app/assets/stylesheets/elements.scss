@@ -49,6 +49,9 @@ button {
 }
 .products {
 	@include grid-column(7, $float:left);
+	h3 {
+		color: #ecf0f1;
+	}
 	.panel {
 		background: #3498db;
 		border: 6px solid #ecf0f1;
@@ -72,6 +75,17 @@ button {
 	}
 }
 .categories {
+	padding-top: 10px;
+	a {
+		color: #ecf0f1;
+	}
+	li {
+		background: #e74c3c;
+		text-align: center;
+		padding: 10px 0;
+		font-weight: bold;
+		margin-top: 6px;
+	}
 	@include grid-column(2, $float:left);
 }
 .padding {
