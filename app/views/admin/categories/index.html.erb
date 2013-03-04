@@ -1,23 +1,23 @@
-<h1>Category Admin</h1>
+<div class="row">
+  <h1 class="center">Admin Category Section</h1>
+    <div class="small-2 large-6columns, spaced">
+      <table class="categorytablewidth">
+        <tr>
+          <th class="left title">Name</th>
+        </tr>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @admin_categories.each do |admin_category| %>
-  <tr>
-    <td><%= admin_category.name %></td>
-    <td><%= link_to 'Show', admin_category %></td>
-    <td><%= link_to 'Edit', edit_admin_category_path(admin_category) %></td>
-    <td><%= link_to 'Destroy', admin_category_path(admin_category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+      <% @admin_categories.each do |admin_category| %>
+        <tr>
+          <td><%= admin_category.name%></td>
+          <td class="cellwidth bold"><%= link_to 'Show', admin_category %></td>
+          <td class="cellwidth bold"><%= link_to 'Edit', edit_admin_category_path(admin_category) %></td>
+          <td class="cellwidth bold"><%= link_to 'Destroy', admin_category_path(admin_category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </table>
+      <br />
+      <%= link_to 'New Category', new_admin_category_path, class: "button" %>
+    </div>
+  </div>
 
 <br />
-
-<%= link_to 'New Category', new_admin_category_path %>

@@ -5,7 +5,6 @@ class Order < ActiveRecord::Base
   scope :all_open, where("paid != 't' AND hold != 't'")
   scope :all_held, where("hold = 't' AND paid != 't'")
   scope :all_paid, where(paid: true)
-  default_scope order('id DESC')
 
   def subtotal
     subtotal_cents/100.0 if subtotal_cents
@@ -35,4 +34,3 @@ end
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #
-

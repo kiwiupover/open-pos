@@ -1,6 +1,10 @@
 class Category < ActiveRecord::Base
   has_many :products
+  validates_presence_of :name
+  validates :name, :uniqueness => { :case_sensitive => false }
+
   attr_accessible :image, :name
+
 end
 
 # == Schema Information
@@ -13,4 +17,3 @@ end
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-

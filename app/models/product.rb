@@ -2,10 +2,20 @@ class Product < ActiveRecord::Base
   belongs_to :category
   has_many :line_items
   has_many :orders, through: :line_items
-  attr_accessible :category_id, :description, :image, :name, :price_cents, :upc_code
+
+  validates_presence_of :category_id, :name, :price_cents
+  validates_uniqueness_of :upc_code
+  
+  attr_accessor :price
+
+  attr_accessible :category_id, :description, :image, :name, :price_cents, :upc_code, :price
 
   def price
     price_cents/100.0 if price_cents
+  end
+
+  def price= price
+  	self.price_cents = (price.to_f*100).round
   end
 
 end

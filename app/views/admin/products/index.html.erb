@@ -1,31 +1,37 @@
-<h1>Listing admin_products</h1>
+<div class="row">
+  <h1 class="center">Admin Product Section</h1>
+    <div class="small-2 large-8columns, spaced">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Upc code</th>
-    <th>Price</th>
-    <th>Category</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+        <table class="producttablewidth">
+          <tr class="title">
+            <th>Name</th>
+            <th>Description</th>
+            <th>UPC code</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
 
-<% @admin_products.each do |admin_product| %>
-  <tr>
-    <td><%= admin_product.name %></td>
-    <td><%= admin_product.description %></td>
-    <td><%= admin_product.upc_code %></td>
-    <td><%= admin_product.price %></td>
-    <td><%= admin_product.category_id %></td>
-    <td><%= link_to 'Show', admin_product %></td>
-    <td><%= link_to 'Edit', edit_admin_product_path(admin_product) %></td>
-    <td><%= link_to 'Destroy', admin_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <% @admin_products.each do |admin_product| %>
+          <tr>
+            <td><%= admin_product.name %></td>
+            <td><%= admin_product.description %></td>
+            <td><%= admin_product.upc_code %></td>
+            <td><%= number_to_currency(admin_product.price_cents/100.0) if admin_product.price_cents %></td>
+            <td><%= admin_product.category.name %></td>
+            <td class="bold"><%= link_to 'Show', admin_product %></td>
+            <td class="bold"><%= link_to 'Edit', edit_admin_product_path(admin_product) %></td>
+            <td class="bold"><%= link_to 'Destroy', admin_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        </table>
+
+        <br />
+
+        <%= link_to 'New Product', new_admin_product_path, class: "button" %>
+    </div>
+</div>
 
 <br />
-
-<%= link_to 'New Product', new_admin_product_path %>

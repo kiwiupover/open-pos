@@ -17,12 +17,12 @@
 
 <p>
   <b>Price:</b>
-  <%= @admin_product.price %>
+  <%= number_to_currency(@admin_product.price_cents/100.0) if @admin_product.price_cents %>
 </p>
 
 <p>
   <b>Category:</b>
-  <%= @admin_product.category_id %>
+  <%= @admin_product.category.name %>
 </p>
 
 

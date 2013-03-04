@@ -1,14 +1,14 @@
-<%= simple_form_for(@admin_product) do |f| %>
+<%= simple_form_for([:admin,@admin_product]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :upc_code %>
+    <%= f.input :upc_code, label: 'UPC Code' %>
     <%= f.input :price %>
-    <%= f.input :category_id %>
+    <%= f.input :category_id, collection: Category.all %>
   </div>
-
+<br />
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

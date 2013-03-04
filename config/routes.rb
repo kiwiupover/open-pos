@@ -1,19 +1,13 @@
 Pos::Application.routes.draw do
+ 
   namespace :admin do
+    resources :categories
     resources :products
   end
 
-
-  namespace :admin do
-    resources :categories
-  end
-
-
   resources :categories
-
-
   resources :line_items
-
+  resources :products
 
   resources :orders do
     member do
@@ -22,10 +16,6 @@ Pos::Application.routes.draw do
       get 'thanks'
     end
   end
-
-
-  resources :products
-
 
   get "welcome/index"
 
