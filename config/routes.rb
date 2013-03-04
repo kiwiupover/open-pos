@@ -15,6 +15,9 @@ Pos::Application.routes.draw do
       get 'receipt'
       get 'thanks'
     end
+    collection do
+      get 'current'
+    end
   end
 
   get "welcome/index"
