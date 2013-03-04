@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    params[:order][:line_items_attributes] = params[:order].delete(:line_items) if params[:order].has_key? :line_items
     order = Order.new(params[:order])
     if order.save
       render json: order, status: :created
@@ -30,7 +31,7 @@ class OrdersController < ApplicationController
 
   def update
     order = Order.find(params[:id])
-      params[:order][:line_items_attributes] = params[:order].delete(:line_items) if params[:order].has_key? :line_items
+    params[:order][:line_items_attributes] = params[:order].delete(:line_items) if params[:order].has_key? :line_items
     if order.update_attributes(params[:order])
       render json: order, status: :ok
     else
