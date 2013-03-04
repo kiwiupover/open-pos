@@ -17,5 +17,9 @@ Pos.OrdersCurrentController = Ember.ObjectController.extend({
 
   total: function() {
     return  parseInt(this.get('cents') + this.get('tax'))
-  }.property('cents', 'tax')
+  }.property('cents', 'tax'),
+
+  payment: function() {
+    this.transitionTo('orders.payment');
+  }
 });

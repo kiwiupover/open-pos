@@ -5,6 +5,7 @@ Pos.Router.map(function() {
     });
     this.route('new');
     this.route('current');
+    this.route('payment');
   });
 	// this.resource('categories', function() {
 	// 	this.resource('category', {path:':category_id'});
