@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.foundation.reveal
 //= require foundation
 //= require ember
 //= require ember-data
@@ -20,6 +21,7 @@
 Pos = Ember.Application.create({
   LOG_TRANSITIONS: true,
 });
-//= require_tree .
 
-$(document).foundation();
+
+
+// $(document).foundation();
