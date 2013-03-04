@@ -15,7 +15,7 @@ Pos.OrdersNewController = Ember.ObjectController.extend({
     this.transitionToRoute('order', this.content);
 	},
 	tax: function() {
-    return  this.get('cents') * 0.045
+    return  parseInt(this.get('cents') * 0.095)
   }.property('cents'),
 
   total: function() {
