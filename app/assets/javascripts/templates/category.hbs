@@ -6,8 +6,10 @@
 			<a href="#" {{action "addListItem" product}}>
 				<div class="panel">
 					<h4>{{product.name}} </h4>
-					<p>{{product.shortDescription}}</p>
-					<strong>${{money product.priceCents}}</strong>
+					<p class='mbn'>{{product.shortDescription}}</p>
+					<div class="money">
+						${{money product.priceCents}}
+					</div>
 				</div>
 			</a>
 		</li>

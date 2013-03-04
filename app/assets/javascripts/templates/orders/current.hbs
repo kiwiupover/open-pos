@@ -1,17 +1,23 @@
 <div class="row">
 	<div class="reciept">
-		<div class="panel">
 			<ul class="no-bullet">
         {{view Ember.TextField valueBinding="customerEmail" placeholder="Customer Email."}}
 				{{#each lineItems}}
 					<li><h6>{{name}} <span>${{money priceCents}}</span></h6></li>
 				{{/each}}
-				Sub Total ${{money cents}}</br>
-				Tax: ${{money tax}}</br>
+				<li class="sub text-right">
+					Sub Total ${{money cents}}
+				</li>
+				<li class="sub text-right">
+					Tax: ${{money tax}}</br>
+				</li>
+
 		    <li id="total"><h3>Total <span>${{money total}}</span></h3></li>
 			</ul>
-			<button {{action payment}} class="button small">take payment</button>
-		</div>
+			<div class="text-center">
+				<button {{action payment}} class="button small">take payment</button>
+			</div>
+
 	</div>
 	<div class="products">
 		{{render 'category'}}

@@ -1,3 +1,4 @@
+
 button {
 	@include button-base;
   @include button-size;
@@ -5,14 +6,73 @@ button {
   @include radius;
   @include single-transition;
 }
+
+.main-body {
+	background: #34495e;
+	color: #fff;
+	margin-top: 20px;
+}
 .reciept {
 	@include grid-column(3, $float:left);
+	padding-top: 12px;
+	background: #2c3e50;
+	li {
+		border-bottom: 1px solid darken(#2c3e50, 4%);
+		h6 {
+			font-weight: normal;
+			font-size: 14px;
+			color:#fff;
+			span {
+				font-weight: bold;
+				float: right;
+				letter-spacing: -1px;
+			}
+		}
+		&.sub {
+			font-size: 90%;
+			color: #ddd;
+			border: none;
+			&:first-of-type {
+				padding-top: 6px;
+			}
+		}
+	}
+	#total {
+		h3 {
+			text-align: center;
+			color: #fff;
+			font-size: 20px;
+		}
+	}
+
+
 }
 .products {
 	@include grid-column(7, $float:left);
+	.panel {
+		background: #3498db;
+		border: 6px solid #ecf0f1;
+		padding: 12px;
+		h4 {
+			color: #ecf0f1;
+		}
+		p {
+			line-height: 1.2;
+		}
+		.money {
+			text-align: right;
+			font-weight: bold;
+			font-size: 22px;
+			letter-spacing: -1px;
+			color: #fff;
+		}
+	}
 }
 .categories {
 	@include grid-column(2, $float:left);
+}
+.padding {
+	padding: 20px;
 }
 
 .products-list {

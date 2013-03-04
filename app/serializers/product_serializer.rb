@@ -3,7 +3,7 @@ class ProductSerializer < ActiveModel::Serializer
   attribute :short_description
 
   def short_description
-    (description[0..40] + "...") if description
+    (description[0..50] + "...") if description
   end
 
 end
