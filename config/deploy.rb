@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-server "ec2-54-241-225-122.us-west-1.compute.amazonaws.com", :web, :app, :db, primary: true
+server "50.18.43.44", :web, :app, :db, primary: true
 
 set :application, "open-pos"
 set :user, "deployer"
