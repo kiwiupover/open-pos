@@ -2,7 +2,6 @@ Pos.OrderController = Ember.ObjectController.extend({
   addListItem: function(item) {
     var order = this.controllerFor('order').get('model'),
         lineItems = order.get('lineItems');
-    console.log(order.id);
     lineItems.createRecord({
       isNew: true,
       productId: item.id,
@@ -21,5 +20,13 @@ Pos.OrderController = Ember.ObjectController.extend({
 
   payment: function() {
     return this.transitionToRoute('order.payment');
+  },
+  tender: function() {
+    this.set('paid', true);
+    // this.set('taxCents', this.tax);
+    // this.set('subtotalCents', this.cents);
+    // this.set('totalCents', this.total);
+    this.store.commit();
+    return this.transitionTo('orders.new');
   }
 });

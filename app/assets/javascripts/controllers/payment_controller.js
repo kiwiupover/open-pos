@@ -13,8 +13,7 @@ Pos.OrderPaymentController = Ember.ObjectController.extend({
   }.property('amountTendered', 'total'),
 
   tender: function() {
-		debugger;
-		var amountTendered = this.get('amountTendered');
+  	this.get('controllers.order').send('tender')
 	}
 
 });
