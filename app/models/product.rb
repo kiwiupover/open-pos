@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   has_many :orders, through: :line_items
 
   validates_presence_of :category_id, :name, :price_cents
-  validates_uniqueness_of :upc_code
+  
   
   attr_accessor :price
 
