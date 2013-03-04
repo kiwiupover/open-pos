@@ -9,14 +9,13 @@
       <% @admin_categories.each do |admin_category| %>
         <tr>
           <td><%= admin_category.name%></td>
-          <td class="cellwidth bold"><%= link_to 'Show', admin_category %></td>
           <td class="cellwidth bold"><%= link_to 'Edit', edit_admin_category_path(admin_category) %></td>
-          <td class="cellwidth bold"><%= link_to 'Destroy', admin_category_path(admin_category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="cellwidth bold"><%= link_to 'Delete', admin_category_path(admin_category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
       </table>
       <br />
-      <%= link_to 'New Category', new_admin_category_path, class: "button" %>
+      <%= link_to 'New Category', new_admin_category_path, class: "button radius" %>
     </div>
   </div>
 

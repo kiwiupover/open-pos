@@ -1,8 +1,28 @@
 <div class="row">
 	<h1 class="center">Edit Category</h1>
 	<div class="small-2 large-6 columns">
-		<%= render 'form' %>
-		<%= link_to 'Show', @admin_category, class: "bold"  %> |
+
+<%= form_for([:admin, @admin_category]) do |f| %>
+  <% if @admin_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_category.errors.count, "error") %> prohibited this admin_category from being saved:</h2>
+
+      <ul>
+      <% @admin_category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'Name' %>
+  </div>
+  <div class="actions">
+    <%= f.button :submit, class: "radius"%> <%= link_to 'Delete', admin_category_path(@admin_category), class: "round right button alert", method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+
 		<%= link_to 'Back', admin_categories_path, class: "bold"  %>
 	</div>
 </div>

@@ -1,8 +1,23 @@
 <div class="row">
 	<h1 class="center">Edit Product</h1>
 	<div class="small-2 large-6 columns">
-		<%= render 'form' %>
-		<%= link_to 'Show', @admin_product, class: "bold"  %> |
+		<%#= render 'form' %>
+
+			<%= simple_form_for([:admin,@admin_product]) do |f| %>
+			  <%= f.error_notification %>
+
+			  <div class="form-inputs">
+			    <%= f.input :name %>
+			    <%= f.input :description %>
+			    <%= f.input :upc_code, label: 'UPC Code' %>
+			    <%= f.input :price %>
+			    <%= f.input :category_id, collection: Category.all %>
+			  </div>
+			<br />
+			  <div class="form-actions">
+			    <%= f.button :submit, class: "radius" %> <%= link_to 'Delete', admin_product_path(@admin_product), class: "round right button alert", method: :delete, data: { confirm: 'Are you sure?' } %>
+			  </div>
+			<% end %>
 		<%= link_to 'Back', admin_products_path, class: "bold"  %>
 	</div>
 </div>

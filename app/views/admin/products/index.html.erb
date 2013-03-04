@@ -14,23 +14,22 @@
             <th></th>
           </tr>
 
-        <% @admin_products.each do |admin_product| %>
+        <% @admin_products.each do |product| %>
           <tr>
-            <td><%= admin_product.name %></td>
-            <td><%= admin_product.description %></td>
-            <td><%= admin_product.upc_code %></td>
-            <td><%= number_to_currency(admin_product.price_cents/100.0) if admin_product.price_cents %></td>
-            <td><%= admin_product.category.name %></td>
-            <td class="bold"><%= link_to 'Show', admin_product %></td>
-            <td class="bold"><%= link_to 'Edit', edit_admin_product_path(admin_product) %></td>
-            <td class="bold"><%= link_to 'Destroy', admin_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= product.name %></td>
+            <td><%= product.description %></td>
+            <td><%= product.upc_code %></td>
+            <td><%= number_to_currency(product.price_cents/100.0) if product.price_cents %></td>
+            <td><%= product.category.name if product.category %></td>
+            <td class="bold"><%= link_to 'Edit', edit_admin_product_path(product) %></td>
+            <td class="bold"><%= link_to 'Delete', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
         </table>
 
         <br />
 
-        <%= link_to 'New Product', new_admin_product_path, class: "button" %>
+        <%= link_to 'New Product', new_admin_product_path, class: "button radius " %>
     </div>
 </div>
 
