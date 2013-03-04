@@ -1,5 +1,7 @@
 <div class="row">
   <h1 class="center">Admin Category Section</h1>
+  <%= link_to 'Categories', admin_categories_path, class: "bold"  %> | <%= link_to 'Products', admin_products_path, class: "bold"  %><br />
+  <br />
     <div class="small-2 large-6columns, spaced">
       <table class="categorytablewidth">
         <tr>
@@ -17,6 +19,5 @@
       <br />
       <%= link_to 'New Category', new_admin_category_path, class: "button radius" %>
     </div>
-  </div>
-
+<div>
 <br />
