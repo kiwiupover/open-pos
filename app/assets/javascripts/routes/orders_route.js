@@ -1,10 +1,7 @@
 Pos.OrdersRoute = Ember.Route.extend({
-  // model: function() {
-  //   return Pos.Order.find('current');
-  // },
-  // setupController: function(controller, model) {
-  //   this.controllerFor('order').set('content', model);
-  // },
+  model: function() {
+    return Pos.Order.find();
+  },
   redirect: function() {
   	this.transitionTo('orders.current');
   }

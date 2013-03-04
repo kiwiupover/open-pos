@@ -9,5 +9,5 @@ DS.RESTAdapter.map('Pos.Category', {
 });
 
 DS.RESTAdapter.map('Pos.Order', {
-  lineItems: { embedded: 'always'}
+  lineItems: { embedded: 'true'}
 });

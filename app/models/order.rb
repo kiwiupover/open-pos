@@ -1,7 +1,11 @@
 class Order < ActiveRecord::Base
+  attr_accessible :customer_email, :hold, :paid, :subtotal_cents, :tax_cents, :total_cents, :line_items_attributes
+
   has_many :line_items
   has_many :products, through: :line_items
-  attr_accessible :customer_email, :hold, :paid, :subtotal_cents, :tax_cents, :total_cents
+
+  accepts_nested_attributes_for :line_items
+
   scope :all_open, where("paid != 't' AND hold != 't'")
   scope :all_held, where("hold = 't' AND paid != 't'")
   scope :all_paid, where(paid: true)

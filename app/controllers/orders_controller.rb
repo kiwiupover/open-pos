@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   def index
     open_orders = Order.all_open
     order = (open_orders.first if open_orders.size > 0) || Order.create
-    render json: order
+    render json: open_orders
   end
 
 	def show
@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
 
   def update
     order = Order.find(params[:id])
+      params[:order][:line_items_attributes] = params[:order].delete(:line_items) if params[:order].has_key? :line_items
     if order.update_attributes(params[:order])
       render json: order, status: :ok
     else
@@ -50,9 +51,20 @@ class OrdersController < ApplicationController
   end
 
   def current
-    open_orders = Order.all_open
-    order = (open_orders.first if open_orders.size > 0) || Order.create
-    render json: order
+      open_orders = Order.all_open
+      order = (open_orders.first if open_orders.size > 0) || Order.create
+    if request.put?
+      order = open_orders.first
+      params[:order][:line_items_attributes] = params[:order].delete(:line_items) if params[:order].has_key? :line_items
+      if order.update_attributes(params[:order])
+        render json: order, status: :ok and return
+      else
+        render json: order.errors, status: :unprocessable_entity and return
+      end
+    else
+      render json: order and return
+    end
+
   end
 
 end

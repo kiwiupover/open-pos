@@ -17,6 +17,7 @@ Pos::Application.routes.draw do
     end
     collection do
       get 'current'
+      put 'current'
     end
   end
 
