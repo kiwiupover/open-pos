@@ -1,11 +1,11 @@
 Pos.Router.map(function() {
 	this.resource('orders', function() {
     this.resource('order', {path:':order_id'}, function() {
+    	this.route('payment');
     	this.route('edit');
     });
     this.route('new');
     this.route('current');
-    this.route('payment');
   });
 	// this.resource('categories', function() {
 	// 	this.resource('category', {path:':category_id'});
