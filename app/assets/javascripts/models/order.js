@@ -14,4 +14,5 @@ Pos.Order = DS.Model.extend({
       return accum + item;
     }, 0);
   }.property('lineItems.@each.cents')
+
 });
