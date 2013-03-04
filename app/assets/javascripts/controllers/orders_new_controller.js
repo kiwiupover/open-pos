@@ -9,6 +9,10 @@ Pos.OrdersNewController = Ember.ObjectController.extend({
       priceCents: item.get('priceCents')
     });
     this.store.commit();
+    this.content.addObserver('id', this, 'afterCreate');
+  },
+  afterCreate: function() {
+    this.transitionToRoute('order', this.content);
 	},
 	tax: function() {
     return  this.get('cents') * 0.045
