@@ -2,7 +2,7 @@
 	<div class="reciept">
 		<div class="panel">
 			<ul class="no-bullet">
-        {{view Ember.TextField valueBinding="customerEmail"}}
+        {{view Ember.TextField valueBinding="customerEmail" placeholder="Customer Email."}}
 				{{#each lineItems}}
 					<li><h6>{{name}} <span>${{money priceCents}}</span></h6></li>
 				{{/each}}
