@@ -2,8 +2,19 @@
 	<div class="reciept">
 			<ul class="no-bullet">
         {{view Ember.TextField valueBinding="customerEmail" placeholder="Customer Email."}}
-				{{#each lineItems}}
-					<li><h6>{{name}} <span>${{money priceCents}}</span></h6></li>
+				{{#each lineItem in lineItems}}
+					<li>
+						<a href="#" {{action removeListItem lineItem}}>
+							<h6>{{lineItem.name}}
+								<span class="remove-item">
+									&#215;
+								</span>
+								<span class='money'>
+									${{money lineItem.priceCents}}
+								</span>
+							</h6>
+						</a>
+					</li>
 				{{/each}}
 				<li class="sub text-right">
 					Sub Total ${{money cents}}

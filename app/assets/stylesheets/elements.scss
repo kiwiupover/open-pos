@@ -30,6 +30,10 @@ button {
 				float: right;
 				letter-spacing: -1px;
 			}
+			.remove-item {
+				padding-left: 5px;
+				color: $primary-color;
+			}
 		}
 		&.sub {
 			font-size: 90%;
