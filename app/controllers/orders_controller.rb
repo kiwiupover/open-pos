@@ -32,6 +32,10 @@ class OrdersController < ApplicationController
   def update
     order = Order.find(params[:id])
     params[:order][:line_items_attributes] = params[:order].delete(:line_items) if params[:order].has_key? :line_items
+
+    remove_missing_line_items(order,params) if params[:order][:line_items_attributes]
+    order.reload
+    
     if order.update_attributes(params[:order])
       render json: order, status: :ok
     else
@@ -66,6 +70,16 @@ class OrdersController < ApplicationController
       render json: order and return
     end
 
+  end
+
+  private
+
+  def remove_missing_line_items(order,params)
+    #binding.pry
+    line_ids = order.line_items.map &:id
+    keep_ids = params[:order][:line_items_attributes].map{ |i| i[:id].to_i }
+    ids_to_delete = line_ids-keep_ids
+    order.line_items.find(ids_to_delete).map &:delete
   end
 
 end
