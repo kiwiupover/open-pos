@@ -1,15 +1,5 @@
 Pos.OrderController = Ember.ObjectController.extend({
   needs: ['order', 'lineItems'],
-  // addListItem: function(item) {
-  //   var lineItems = this.get('controllers.order').get('lineItems');
-  //   lineItems.createRecord({
-  //     isNew: true,
-  //     productId: item.id,
-  //     name: item.get('name'),
-  //     priceCents: item.get('priceCents')
-  //   });
-  //   // this.store.commit();
-  // },
 
   addListItem: function(item) {
     this.get('controllers.lineItems').send('addLineItem', item);
