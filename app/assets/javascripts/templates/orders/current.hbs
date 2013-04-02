@@ -16,6 +16,24 @@
 						</a>
 					</li>
 				{{/each}}
+				{{#if customLineItem}}
+					<form action addCustom>
+						<div class="row">
+							<div class="large-8 columns">
+								{{view Ember.TextField valueBinding="name" placeholder="Product Name"}}
+							</div>
+							<div class="large-4 columns">
+								{{view Ember.TextField valueBinding="price" placeholder="Price"}}
+							</div>
+							<div class="large-3 columns">
+								<button {{action submit}} class="button small">Add</button>
+							</div>
+							<div class="die"></div>
+						</div>
+					</form>
+				{{else}}
+					<a href="#" {{action setUpCustomLineItem target="controller"}} class='left'>Add Line Item</a>
+				{{/if}}
 				<li class="sub text-right">
 					Sub Total ${{money cents}}
 				</li>
