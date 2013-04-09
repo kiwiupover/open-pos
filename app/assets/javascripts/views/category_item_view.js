@@ -2,10 +2,10 @@ Pos.CategoryItemView = Ember.View.extend({
 	tagName: 'li',
 
   mouseDown: function() {
-    this.fire('itsClicked');
+    this.trigger('itsClicked');
   },
   touchStart: function() {
-  	this.fire('itsClicked');
+  	this.trigger('itsClicked');
   },
   itsClicked: function(e) {
   	var contentId = this.content.id

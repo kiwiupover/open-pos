@@ -2,7 +2,7 @@
 	{{#each category in content}}
 		{{#view Pos.CategoryItemView contentBinding="category"}}
 			<a href="#" {{action changeView category.id}}>
-				<li>{{category.name}}</li>
+				{{category.name}}
 			</a>
 		{{/view}}
 	{{/each}}
