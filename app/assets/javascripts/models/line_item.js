@@ -7,5 +7,9 @@ Pos.LineItem = DS.Model.extend({
   name: DS.attr('string'),
 
   order: DS.belongsTo('Pos.Order'),
-  product: DS.belongsTo('Pos.Order')
+  product: DS.belongsTo('Pos.Order'),
+
+  lineItemTotalCents: function() {
+    return parseInt(this.get('priceCents') * this.get('quantity'));
+  }.property('priceCents', 'quantity')
 });

@@ -5,7 +5,7 @@ Pos.ApplicationRoute = Ember.Route.extend({
   },
   events: {
     openModal: function(content) {
-      this.controllerFor('reveal').set('content', content);
+      this.get('controllers.reveal').set('content', content);
       $('#myModal').reveal();
     }
   }

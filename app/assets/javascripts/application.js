@@ -18,8 +18,12 @@
 //= require ember-data
 //= require_self
 //= require pos
+
+window.ENV = window.ENV || {};
+ENV.EXPERIMENTAL_CONTROL_HELPER = true;
+
 Pos = Ember.Application.create({
-  LOG_TRANSITIONS: true,
+  LOG_TRANSITIONS: true
 });
 
 

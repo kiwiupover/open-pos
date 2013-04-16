@@ -1,0 +1,20 @@
+{{#view Pos.LineItemView contentBinding='lineItem'}}
+  <div class="row collapse">
+    <div class="large-6 columns">
+      <h6>{{lineItem.name}}</h6>
+    </div>
+    <div class="large-2 columns text-right">
+      <h6>qty: {{lineItem.quantity}}</h6>
+    </div>
+    <div class="large-3 columns">
+      <h6>
+      <span class='money'>
+        ${{money lineItem.lineItemTotalCents}}
+      </span>
+      </h6>
+    </div>
+    <div class="large-1 columns">
+      <span class="button small">-</span>
+    </div>
+  </div>
+{{/view}}

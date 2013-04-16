@@ -21,7 +21,7 @@ Pos.OrderController = Ember.ObjectController.extend({
         orderId = this.get('id');
     priceCents = this._priceInCents(price);
     if (price)
-    this.get('lineItems').createRecord({ name: name, priceCents: priceCents, orderId: orderId });
+    this.get('lineItems').createRecord({ name: name, priceCents: priceCents, quantity: 1, orderId: orderId });
     this.get('store').commit();
     this.set('customLineItem', false);
   },

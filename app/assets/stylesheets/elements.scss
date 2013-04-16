@@ -18,8 +18,12 @@ button {
 	border-radius: 5px 0 0 5px;
 	padding-top: 12px;
 	background: #2c3e50;
+	li.line-item {
+		cursor: pointer;
+	}
 	li {
 		border-bottom: 1px solid darken(#2c3e50, 4%);
+
 		h6 {
 			font-family: $header-font-family;
 			font-weight: normal;
@@ -40,8 +44,18 @@ button {
 			color: #ddd;
 			border: none;
 			&:first-of-type {
-				padding-top: 6px;
+				padding-top: 12px;
 			}
+		}
+		.money {
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+		.button.small {
+			margin: 5px 0 0 5px;
+			padding: 2px 6px 4px;
+			font-size: 18px;
+			line-height: 0.4;
 		}
 	}
 	#total {
@@ -115,6 +129,27 @@ button {
 	@include block-grid($per-row, $spacing, $base-styles);
 	li {
 		padding: 10px;
+	}
+}
+.fixed-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: #111111;
+	left: 0;
+	height: 40px;
+	text-align: right;
+	padding: 0 40px 0;
+	font-size: 40px;
+	letter-spacing: -1px;
+	span {
+		position: relative;
+		font-size: 50px;
+		top: -12px;
+		color: red;
+		background: rgba(1,1,1,0.5);
+		padding: 2px 10px;
+		border-radius: (3px);
 	}
 }
 .text-left {

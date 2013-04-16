@@ -1,9 +1,7 @@
 <ul class="no-bullet">
 	{{#each category in content}}
 		{{#view Pos.CategoryItemView contentBinding="category"}}
-			<a href="#" {{action changeView category.id}}>
-				{{category.name}}
-			</a>
+			{{category.name}}
 		{{/view}}
 	{{/each}}
 </ul>
