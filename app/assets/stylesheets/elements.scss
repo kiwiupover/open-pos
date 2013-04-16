@@ -12,6 +12,9 @@ button {
 	color: #fff;
 	margin: 20px auto;
 	border-radius: 5px;
+	h1, h2, h4 {
+		color: white;
+	}
 }
 .reciept {
 	@include grid-column(3, $float:left);

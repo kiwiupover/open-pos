@@ -1,10 +1,18 @@
 <div class="main">
   <div class="products">
-    <h1>All Your Orders</h1>
-    <h4>Total {{money controllers.orders.totalOrders}} </h4>
+    <h2>Welcome to the Open POS</h2>
+    <div class="panel">
+      <h3>All Your Orders</h3>
+      <ul class="no-bullet">
+        <li><em>Total Orders:</em> {{controllers.orders.length}}</li>
+        <li><em>Total Income:</em> ${{money controllers.orders.totalOrders}}</li>
+      </ul>
+    </div>
+
+
   </div>
-  <div class="categories">
-    <h2>jfdklas;jfdalk;s</h2>
+  <div class="categories mtl">
+    {{#linkTo orders.new class='button large radius'}}Start a New Order{{/linkTo}}
   </div>
 </div>
 
