@@ -1,3 +1,0 @@
-== Ember Point of Sale App
-
-Emberjs, Ember Data backed by a Rails App.
