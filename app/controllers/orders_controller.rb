@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
 
     remove_missing_line_items(order,params) if params[:order][:line_items_attributes]
     order.reload
-    
+
     if order.update_attributes(params[:order])
       render json: order, status: :ok
     else
@@ -75,7 +75,6 @@ class OrdersController < ApplicationController
   private
 
   def remove_missing_line_items(order,params)
-    #binding.pry
     line_ids = order.line_items.map &:id
     keep_ids = params[:order][:line_items_attributes].map{ |i| i[:id].to_i }
     ids_to_delete = line_ids-keep_ids

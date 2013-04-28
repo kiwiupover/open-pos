@@ -11,7 +11,6 @@ Pos.LineItemsController = Ember.ArrayController.extend({
         lineItemWithProduct.set('quantity', parseInt(lineItemQuantity + 1));
       } else {
         lineItems.createRecord({
-          isNew: true,
           productId: item.id,
           quantity: 1,
           name: item.get('name'),

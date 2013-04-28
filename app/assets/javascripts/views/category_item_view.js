@@ -1,12 +1,22 @@
 Pos.CategoryItemView = Ember.View.extend({
 	tagName: 'li',
   classNames: ['category'],
-  touchStart: function() {
-    this.trigger('itsClicked');
-  },
-  mouseDown: function() {
-    this.trigger('itsClicked');
-  },
+  // touchStart: function() {
+  //   this.trigger('itsClicked');
+  // },
+  // mouseDown: function() {
+  //   this.trigger('itsClicked');
+  // },
+
+  eventManager: Ember.Object.create({
+     touchStart: function(event, view){
+      var contentId = view.content.id;
+      view.trigger('itsClicked');
+     },
+     mouseDown: function(){
+       touchStart();
+     }
+   }),
 
   itsClicked: function(e) {
   	var contentId = this.content.id
@@ -15,12 +25,4 @@ Pos.CategoryItemView = Ember.View.extend({
 });
 
 
-// eventManager: Ember.Object.create({
-//    touchStart: function(event, view){
-//     var contentId = view.content.id;
-//     view.trigger('itsClicked');
-//    },
-//    mouseDown: function(){
-//      touchStart();
-//    }
-//  }),
+

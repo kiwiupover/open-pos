@@ -36,6 +36,7 @@ end
 gem 'ember-rails'
 gem 'filepicker-rails'
 
+gem 'thin'
 gem 'unicorn'
 gem 'capistrano'
 gem 'simple_form'

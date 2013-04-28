@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :customer_email, :hold, :paid, :subtotal_cents, :tax_cents, :total_cents, :line_items_attributes
+  attr_accessible :customer_email, :hold, :paid, :subtotal_cents, :tax_cents, :total_cents, :created_at, :line_items_attributes
 
   has_many :line_items
   has_many :products, through: :line_items

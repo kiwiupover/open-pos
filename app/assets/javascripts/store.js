@@ -1,7 +1,7 @@
 DS.RESTAdapter.configure("plurals", { category: "categories" });
 
 Pos.Store = DS.Store.extend({
-  revision: 11
+  revision: 12
 });
 
 DS.RESTAdapter.map('Pos.Category', {

@@ -1,9 +1,17 @@
 class LineItemsController < ApplicationController
 
-	def update
-    line_item = LineItems.find(params[:id])
-    binding.pry
-       # params[:order][:line_items] = params[:order].delete(:line_items) if params[:order].has_key? :line_items
+  def index
+    line_items = LineItem.find(params[:ids])
+    render json: line_items
+  end
+
+  def show
+    line_item = LineItem.find(params[:id])
+    render json: line_item
+  end
+
+  def update
+    line_item = LineItem.find(params[:id])
     if line_item.update_attributes(params[:line_item])
       render json: line_item, status: :ok
     else

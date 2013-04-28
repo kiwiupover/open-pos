@@ -1,5 +1,4 @@
 Pos.Order = DS.Model.extend({
-  createdAt: DS.attr('date'),
   customerEmail: DS.attr('string'),
   paid: DS.attr('boolean'),
   hold: DS.attr('boolean'),
