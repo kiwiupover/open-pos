@@ -5,7 +5,7 @@ Pos.LineItemsController = Ember.ArrayController.extend({
       var lineItems = this.get('controllers.order').get('lineItems'),
           itemId = parseInt(item.id),
           lineItemWithProduct = lineItems.findProperty('productId', itemId);
-        console.log('add ' + itemId);
+
       if (lineItemWithProduct) {
         var lineItemQuantity = lineItemWithProduct.get('quantity');
         lineItemWithProduct.set('quantity', parseInt(lineItemQuantity + 1));
@@ -17,6 +17,7 @@ Pos.LineItemsController = Ember.ArrayController.extend({
           priceCents: item.get('priceCents')
         });
       }
+
       this.store.commit();
     },
 
