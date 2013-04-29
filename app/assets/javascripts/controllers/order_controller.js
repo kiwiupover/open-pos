@@ -1,6 +1,8 @@
 Pos.OrderController = Ember.ObjectController.extend({
-  needs: ['order', 'lineItems'],
+  needs: ['lineItems'],
   customLineItem: false,
+  editing: false,
+
   addListItem: function(item) {
     this.get('controllers.lineItems').send('addLineItem', item);
   },
@@ -20,10 +22,23 @@ Pos.OrderController = Ember.ObjectController.extend({
         price = this.get('price'),
         orderId = this.get('id');
     priceCents = this._priceInCents(price);
-    if (price)
-    this.get('lineItems').createRecord({ name: name, priceCents: priceCents, quantity: 1, orderId: orderId });
-    this.get('store').commit();
+    if (price) {
+      this.get('lineItems').createRecord({ name: name, priceCents: priceCents, quantity: 1, orderId: orderId });
+      this.get('store').commit();
+      this.set('customLineItem', false);
+    }
+  },
+
+  cancelCustomLineItem: function() {
     this.set('customLineItem', false);
+  },
+
+  editOrder: function() {
+    if (this.get('editing') === true) {
+      this.set('editing', false);
+    } else {
+      this.set('editing', true);
+    }
   },
 
   tax: function() {

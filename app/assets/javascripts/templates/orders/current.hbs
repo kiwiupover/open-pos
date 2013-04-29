@@ -1,41 +1,27 @@
-<div class="row">
-	<div class="reciept">
-			<ul class="no-bullet">
-        {{view Ember.TextField valueBinding="customerEmail" placeholder="Customer Email."}}
-				{{#each lineItem in lineItems}}
-					{{partial 'lineItem'}}
-				{{/each}}
-				{{#if customLineItem}}
-					<form action addCustom>
-						<div class="row">
-							<div class="large-8 columns">
-								{{view Ember.TextField valueBinding="name" placeholder="Product Name"}}
-							</div>
-							<div class="large-4 columns">
-								{{view Ember.TextField valueBinding="price" placeholder="Price"}}
-							</div>
-							<div class="large-3 columns">
-								<button {{action submit}} class="button small">Add</button>
-							</div>
-							<div class="die"></div>
-						</div>
-					</form>
-				{{else}}
-					<a href="#" {{action setUpCustomLineItem target="controller"}} class='left'>Add Line Item</a>
-				{{/if}}
-				<li class="sub text-right">
-					Sub Total ${{money cents}}
-				</li>
-				<li class="sub text-right">
-					Tax: ${{money tax}}</br>
-				</li>
+<div class="row" {{bindAttr class="editing:editing"}}>
+	<div class="receipt" >
+		<button {{action editOrder}}>Edit</button>
+		<ul class="no-bullet">
+			{{#each lineItem in lineItems}}
+				{{partial 'lineItem'}}
+			{{/each}}
+			{{#if customLineItem}}
+				{{partial "orders/add_custom_form"}}
+			{{else}}
+				<a href="#" {{action setUpCustomLineItem target="controller"}} class='left'>Add Line Item</a>
+			{{/if}}
+			<li class="sub text-right">
+				Sub Total ${{money cents}}
+			</li>
+			<li class="sub text-right">
+				Tax: ${{money tax}}</br>
+			</li>
 
-		    <li id="total"><h3>Total <span>${{money total}}</span></h3></li>
-			</ul>
-			<div class="text-center">
-				<button {{action payment}} class="button small">take payment</button>
-			</div>
-
+	    <li id="total"><h3>Total <span>${{money total}}</span></h3></li>
+		</ul>
+		<div class="text-center">
+			<button {{action payment}} class="button small">take payment</button>
+		</div>
 	</div>
 	<div class="dashboard">
 		<div class="products">

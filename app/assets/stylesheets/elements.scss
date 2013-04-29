@@ -1,3 +1,6 @@
+@import 'compass/css3/transition';
+
+$trasition-time: 0.1s;
 
 button {
 	@include button-base;
@@ -16,11 +19,17 @@ button {
 		color: white;
 	}
 }
-.reciept {
+.receipt {
 	@include grid-column(3, $float:left);
+	@include transition-property(width);
+  @include transition-duration($trasition-time);
+  @include transition-timing-function(ease-in);
 	border-radius: 5px 0 0 5px;
 	padding-top: 12px;
 	background: #2c3e50;
+	.editing & {
+		@include grid-column(5, $float:left);
+	}
 	li.line-item {
 		cursor: pointer;
 	}
@@ -75,10 +84,20 @@ button {
 .dashboard {
 	background: #34495e;
 	@include grid-column(9, $float:left);
+	@include transition-property(width);
+  @include transition-duration($trasition-time);
+  @include transition-timing-function(ease-in);
 	border-radius: 0 5px 5px 0;
+	.editing & {
+		@include grid-column(7, $float:left);
+	}
 }
 .products {
 	@include grid-column(9, $float:left);
+	.editing & {
+
+	}
+
 	h3 {
 		color: #ecf0f1;
 		font-family: $header-font-family;
@@ -107,7 +126,14 @@ button {
 	}
 }
 .categories {
+	@include grid-column(3, $float:left);
 	padding-top: 10px;
+	@include transition-property(width);
+  @include transition-duration($trasition-time);
+  @include transition-timing-function(ease-in);
+	.editng & {
+
+	}
 	a {
 		color: #ecf0f1;
 	}
@@ -119,7 +145,8 @@ button {
 		margin-top: 6px;
 		font-family: $header-font-family;
 	}
-	@include grid-column(3, $float:left);
+
+
 }
 .padding {
 	padding: 20px;
