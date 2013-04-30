@@ -1,7 +1,7 @@
 <div class="row" {{bindAttr class="editing:editing"}}>
 	<div class="receipt" >
-		<button {{action editOrder}}>Edit</button>
-		<ul class="no-bullet">
+		<button {{action editOrder}} class="button small right">Edit</button>
+		<ul class="no-bullet clear line-items collapse">
 			{{#each lineItem in lineItems}}
 				{{partial 'lineItem'}}
 			{{/each}}
@@ -16,7 +16,6 @@
 			<li class="sub text-right">
 				Tax: ${{money tax}}</br>
 			</li>
-
 	    <li id="total"><h3>Total <span>${{money total}}</span></h3></li>
 		</ul>
 		<div class="text-center">
