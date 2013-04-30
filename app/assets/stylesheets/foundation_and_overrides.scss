@@ -8,7 +8,6 @@
                font-url("standard/tradegothicltstd.otf") format("opentype");
 }
 // Required global settings and mixins for Foundation
-@import "foundation/foundation-global";
 
 // Settings file to override Foundation variables
 
@@ -19,6 +18,25 @@
 //
 // Foundation Global Variables
 //
+
+//// The default font-size is set to 100% of the browser style sheet (usually 16px)
+//// for compatibility with brower-based text zoom or user-set defaults.
+$base-font-size: 100% !default;
+
+//// $base-line-height is 24px while $base-font-size is 16px
+//// $base-line-height: 150%;
+
+//// This is the default html and body font-size for the base em value.
+
+//// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
+//// If you want your base font-size to be a different size and not have it effect grid size too,
+//// set the value of $em-base to $base-font-size ($em-base: $base-font-size;)
+$em-base: 16px !default;
+
+//// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
+@function emCalc($pxWidth) {
+  @return $pxWidth / $em-base * 1em;
+}
 
 // This is the default html and body font-size for the base em value.
 // $em-base: 16px;
