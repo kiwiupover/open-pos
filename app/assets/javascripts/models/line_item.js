@@ -5,6 +5,7 @@ Pos.LineItem = DS.Model.extend({
   priceCents: DS.attr('number'),
   extendedCents: DS.attr('number'),
   name: DS.attr('string'),
+  taxable: DS.attr('boolean'),
 
   order: DS.belongsTo('Pos.Order'),
 

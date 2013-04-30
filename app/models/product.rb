@@ -4,11 +4,11 @@ class Product < ActiveRecord::Base
   has_many :orders, through: :line_items
 
   validates_presence_of :category_id, :name, :price_cents
-  
-  
+
+
   attr_accessor :price
 
-  attr_accessible :category_id, :description, :image, :name, :price_cents, :upc_code, :price
+  attr_accessible :category_id, :description, :image, :name, :price_cents, :upc_code, :price, :taxable
 
   def price
     price_cents/100.0 if price_cents

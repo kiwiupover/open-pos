@@ -14,7 +14,8 @@ Pos.LineItemsController = Ember.ArrayController.extend({
           productId: item.id,
           quantity: 1,
           name: item.get('name'),
-          priceCents: item.get('priceCents')
+          priceCents: item.get('priceCents'),
+          taxable: item.taxable
         });
       }
 

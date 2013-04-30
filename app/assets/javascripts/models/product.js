@@ -6,6 +6,7 @@ Pos.Product = DS.Model.extend({
   category: DS.attr('string'),
   upcCode: DS.attr('string'),
   image: DS.attr('string'),
+  taxable: DS.attr('boolean'),
 
   category: DS.belongsTo('Pos.Category')
 
