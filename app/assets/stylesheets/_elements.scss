@@ -19,6 +19,9 @@ button {
 		color: white;
 	}
 }
+.editing {
+
+}
 .receipt {
 	@include grid-column(3, $float:left);
 	@include transition-property(width);
@@ -71,6 +74,7 @@ button {
 		}
 	}
 	#total {
+		border-bottom: none;
 		h3 {
 			text-align: center;
 			color: #fff;

@@ -1,6 +1,5 @@
 Ember.Handlebars.registerBoundHelper('money', function(value) {
   if (isNaN(value)) { return "0.00"; }
-  return (value % 100 === 0 ?
-          value / 100 + ".00" :
-          parseInt(value / 100, 10) + "." + parseInt(value % 100));
+  var number = value / 100;
+  return accounting.formatNumber(number, 2, ",");
 });

@@ -15,6 +15,7 @@
 //= require jquery.foundation.reveal
 //= require foundation
 //= require lib/handlebars
+//= require lib/accounting
 //= require ember
 //= require ember-data
 //= require_self
