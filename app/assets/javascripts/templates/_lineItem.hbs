@@ -5,6 +5,7 @@
   <div class="qty text-right columns">
     <h6>qty: {{lineItem.quantity}}</h6>
   </div>
+
   <div class="line-total columns">
     <h6>
     <span class='money'>
@@ -12,6 +13,11 @@
     </span>
     </h6>
   </div>
+  {{#if editing}}
+    <div class="taxable columns">
+      <span class="button small">Tax</span>
+    </div>
+  {{/if}}
   <div class="edit columns">
     <span class="button small">-</span>
   </div>

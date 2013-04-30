@@ -4,9 +4,18 @@
     float: left
   .name
     +grid-column(6)
+    .editing &
+      +grid-column(4)
+      padding-left: 0
+      padding-right: 0
   .qty
     +grid-column(2)
   .line-total
     +grid-column(3)
   .edit
     +grid-column(1)
+  .taxable
+    .editing &
+      +grid-column(2)
+      padding-left: 0
+      padding-right: 0
