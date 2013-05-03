@@ -2,7 +2,7 @@
 
 In this repo you will find examples of how to use touch events that make the application feel fast on touch devises.
 
-Open-pos is built usign the [ember-rails gem](https://github.com/emberjs/ember-rail)
+Open-pos is built usign the [ember-rails gem](https://github.com/emberjs/ember-rails)
 
 ## Getting Started
 
