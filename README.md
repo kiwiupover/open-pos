@@ -1,8 +1,8 @@
 # Open POS is a Point of Sale Application Built with Ember.
 
-In this repo you will find examples of how to use touch events that make the application feel fast on touch devises.
+In this repo you will find examples of touch events that make the application fast on touch devises.
 
-Open-pos is built usign the [ember-rails gem](https://github.com/emberjs/ember-rails)
+Open-pos is built using the [ember-rails gem](https://github.com/emberjs/ember-rails)
 
 ## Getting Started
 
