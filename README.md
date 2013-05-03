@@ -9,5 +9,5 @@ Open-pos is built using the [ember-rails gem](https://github.com/emberjs/ember-r
 1. ``` git clone git@github.com:kiwiupover/open-pos.git ```
 2. ``` cd open-pos ```
 2. ``` bundle install ```
-3. ``` rake db:create ``` This command will setup the database and add seed data.
+3. ``` rake db:create ``` Setup the database and add seed data.
 4. ``` rails server ```
