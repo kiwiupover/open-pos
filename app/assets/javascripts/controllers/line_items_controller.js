@@ -3,19 +3,18 @@ Pos.LineItemsController = Ember.ArrayController.extend({
     addLineItem: function(item) {
 
       var lineItems = this.get('controllers.order').get('lineItems'),
-          itemId = parseInt(item.id),
-          lineItemWithProduct = lineItems.findProperty('productId', itemId);
+          lineItemWithProduct = lineItems.findProperty('product', item);
 
       if (lineItemWithProduct) {
         var lineItemQuantity = lineItemWithProduct.get('quantity');
         lineItemWithProduct.set('quantity', parseInt(lineItemQuantity + 1));
       } else {
         lineItems.createRecord({
-          productId: item.id,
+          product: item,
           quantity: 1,
           name: item.get('name'),
           priceCents: item.get('priceCents'),
-          taxable: item.taxable
+          taxable: item.get('taxable')
         });
       }
 

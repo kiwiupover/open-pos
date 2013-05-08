@@ -35,7 +35,6 @@ class OrdersController < ApplicationController
 
     remove_missing_line_items(order,params) if params[:order][:line_items_attributes]
     order.reload
-
     if order.update_attributes(params[:order])
       render json: order, status: :ok
     else

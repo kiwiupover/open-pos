@@ -1,24 +1,27 @@
 {{#view Pos.LineItemView contentBinding='lineItem' class='row collapse'}}
   <div class="name columns">
-    <h6>{{lineItem.name}}</h6>
+    <h6>{{lineItem.product.name}}</h6>
   </div>
   <div class="qty text-right columns">
     <h6>qty: {{lineItem.quantity}}</h6>
   </div>
-
-  <div class="line-total columns">
-    <h6>
-    <span class='money'>
-      ${{money lineItem.lineItemTotalCents}}
-    </span>
-    </h6>
-  </div>
   {{#if editing}}
-    <div class="taxable columns">
-      taxable {{taxable}}
+    <div class="taxable columns text-right">
+      taxable {{view Ember.Checkbox checkedBinding="lineItem.product.taxable"}}
     </div>
   {{/if}}
-  <div class="edit columns">
-    <span class="button small">-</span>
+  <div class="line-total columns">
+    <h6>
+      {{#if editing}}
+        {{input valueBinding="lineItem.priceCents"}}
+      {{else}}
+        <span class='money'>
+          ${{money lineItem.lineItemTotalCents}}
+        </span>
+      {{/if}}
+    </h6>
+  </div>
+  <div class="edit columns text-right">
+    <button class="button small"{{action removeLineItem target="view"}}>-</button>
   </div>
 {{/view}}
