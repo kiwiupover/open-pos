@@ -1,5 +1,7 @@
 Pos.OrderController = Ember.ObjectController.extend({
   needs: ['lineItems'],
+  sortProperties: ['lineItems.id'],
+  sortAscending: true,
   customLineItem: false,
   editing: false,
 

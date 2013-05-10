@@ -3,7 +3,6 @@ Pos.Product = DS.Model.extend({
   description: DS.attr('string'),
   shortDescription: DS.attr('string'),
   priceCents: DS.attr('number'),
-  category: DS.attr('string'),
   upcCode: DS.attr('string'),
   image: DS.attr('string'),
   taxable: DS.attr('boolean'),
