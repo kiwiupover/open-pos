@@ -46,7 +46,7 @@ Pos.OrderController = Ember.ObjectController.extend({
   tax: function() {
     var taxableLineItems = this.get('lineItems').findProperty('product.taxable', true);
     return  parseInt(this.get('cents') * 0.095)
-  }.property('cents'),
+  }.property('cents', 'lineItems'),
 
   total: function() {
     return  parseInt(this.get('cents') + this.get('tax'))

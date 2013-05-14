@@ -32,5 +32,9 @@ Pos.LineItemsController = Ember.ArrayController.extend({
           lineItems.removeObject(lineItemWithProduct);
         }
         this.store.commit();
-    }
+    },
+
+    totalCents: function() {
+      debugger;
+    }.property('lineItems.@each')
 });
