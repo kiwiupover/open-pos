@@ -1,0 +1,16 @@
+<h1>Products Page</h1>
+<div class="row">
+  <div class="large-4 columns">
+    <ul>
+      {{#each model}}
+        <li>{{#linkTo products.show this}}{{name}}{{/linkTo}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="large-8 columns">
+    {{outlet}}
+  </div>
+</div>
+
+
+

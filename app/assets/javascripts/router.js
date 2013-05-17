@@ -7,10 +7,7 @@ Pos.Router.map(function() {
     this.route('new');
     this.route('current');
   });
-	// this.resource('categories', function() {
-	// 	this.resource('category', {path:':category_id'});
-	// });
-	this.resource('products', function() {
-		this.resource('product', {path:':product_id)'});
-	})
+  this.resource('products', function(){
+    this.route('show', {path: ':product_id'});
+  });
 });
