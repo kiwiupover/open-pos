@@ -198,3 +198,11 @@ button {
 ul {
 	@extend .no-bullet
 }
+
+.product-create {
+	h1 {
+		small {
+			color: #fff;
+		}
+	}
+}
