@@ -11,3 +11,7 @@ Open-pos is built using the [ember-rails gem](https://github.com/emberjs/ember-r
 2. ``` bundle install ```
 3. ``` rake db:create ``` Setup the database and add seed data.
 4. ``` rails server ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kiwiupover/open-pos/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
