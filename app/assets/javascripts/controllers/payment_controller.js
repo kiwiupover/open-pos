@@ -3,21 +3,24 @@ Pos.OrderPaymentController = Ember.ObjectController.extend({
 	amountTendered: "",
 
 	changeDue: function() {
-    var amountTendered = parseInt(this.get('amountTendered') * 100),
-    		total =  this.get('controllers.order').get('total'),
-    		change = parseInt(amountTendered - total)
+    var amountTendered = parseInt(this.get('amountTendered') * 100, 10),
+        total =  this.get('controllers.order').get('total'),
+        change = parseInt(amountTendered - total, 10);
 
-   	if (change > 0) {
-   		return change;
-   	}
+    if (change > 0) {
+      return change;
+    }
   }.property('amountTendered', 'total'),
 
-  tender: function() {
-  	this.get('controllers.order').send('tender')
-	},
-  closeModal: function () {
-    var order = this.get('controllers.order').get('model');
-    return this.transitionToRoute('order', order);
+  actions: {
+    tender: function() {
+      this.get('controllers.order').send('tender');
+    },
+
+    closeModal: function () {
+      var order = this.get('controllers.order').get('model');
+      return this.transitionToRoute('order', order);
+    }
   }
 
 });

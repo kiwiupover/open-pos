@@ -1,6 +1,6 @@
 {{#view Pos.LineItemView contentBinding='lineItem' class='row collapse'}}
   <div class="name columns">
-    <h6>{{lineItem.product.name}}</h6>
+    <h6>{{lineItem.name}}</h6>
   </div>
   <div class="qty text-right columns">
     <h6>qty: {{lineItem.quantity}}</h6>
@@ -22,6 +22,6 @@
     </h6>
   </div>
   <div class="edit columns text-right">
-    <button class="button small"{{action removeLineItem target="view"}}>-</button>
+    <button class="button small"{{action 'removeLineItem' lineItem target="view"}}>-</button>
   </div>
 {{/view}}

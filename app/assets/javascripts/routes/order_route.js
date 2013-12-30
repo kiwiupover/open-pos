@@ -1,5 +1,5 @@
 Pos.OrderRoute = Ember.Route.extend({
   model: function(params) {
-    return Pos.Order.find(params.order_id);
+    return this.store.find('order', params.order_id);
   }
 });
