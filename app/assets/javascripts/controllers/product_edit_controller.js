@@ -4,8 +4,10 @@ Pos.ProductsEditController = Ember.ObjectController.extend({
     return this.get('name') + " - " + this.get('priceCents');
   }.property('name', 'priceCents'),
 
-
-  save: function() {
-    alert('wahoo');
+  actions: {
+    save: function() {
+      alert('wahoo');
+    }
   }
+
 });

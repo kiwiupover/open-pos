@@ -14,15 +14,19 @@
 //= require jquery_ujs
 //= require jquery.foundation.reveal
 //= require foundation
-//= require lib/handlebars
 //= require lib/accounting
+//= require handlebars
 //= require ember
 //= require ember-data
 //= require_self
 //= require pos
 
 Pos = Ember.Application.create({
-  LOG_TRANSITIONS: true
+  LOG_ACTIVE_GENERATION: true,
+  LOG_MODULE_RESOLVER: true,
+  LOG_TRANSITIONS: true,
+  LOG_TRANSITIONS_INTERNAL: true,
+  LOG_VIEW_LOOKUPS: true,
 });
 
 

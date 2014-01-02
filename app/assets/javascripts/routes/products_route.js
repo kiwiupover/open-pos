@@ -1,5 +1,5 @@
 Pos.ProductsRoute = Ember.Route.extend({
   model: function(){
-    return Pos.Product.find();
+    return this.store.find('product');
   }
 });

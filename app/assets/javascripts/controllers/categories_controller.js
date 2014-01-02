@@ -1,10 +1,10 @@
 Pos.CategoriesController = Ember.ArrayController.extend({
 	needs: 'category',
-	changeView: function(category) {
-    this.get('controllers.category').set('model', Pos.Category.find(category));
-  },
 
-
-
+  actions: {
+    changeView: function(category) {
+      var categoryModel = this.store.find('category', category);
+      this.get('controllers.category').set('model', categoryModel);
+    }
+  }
 });
-

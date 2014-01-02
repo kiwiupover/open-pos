@@ -24,4 +24,10 @@ class LineItemsController < ApplicationController
   	line = order.line_items.create params[:line_item]
   	render json: line, status: :ok
   end
+
+  def destroy
+    line_item = LineItem.find(params[:id])
+    line_item.destroy
+    render json: nil, status: :ok
+  end
 end

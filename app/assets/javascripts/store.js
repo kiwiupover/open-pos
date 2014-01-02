@@ -1,9 +1,8 @@
-DS.RESTAdapter.configure("plurals", { category: "categories" });
+// DS.RESTAdapter.configure("plurals", { category: "categories" });
 
 Pos.Store = DS.Store.extend({
-  revision: 12
+  adapter: '_ams'
 });
-
 
 
 // DS.RESTAdapter.map('Pos.Category', {
