@@ -1,6 +1,10 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :price_cents, :category, :upc_code, :image, :taxable
+  embed :ids
+
+  attributes :id, :name, :description, :price_cents, :upc_code, :image, :taxable
   attribute :short_description
+
+  has_one :category
 
   def short_description
     (description[0..40] + "...") if description

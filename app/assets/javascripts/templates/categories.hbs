@@ -1,6 +1,6 @@
 <ul class="no-bullet">
 	{{#each category in content}}
-		{{#view Pos.CategoryItemView contentBinding="category"}}
+		{{#view 'categoryItem' contentBinding="category"}}
 			{{category.name}}
 		{{/view}}
 	{{/each}}

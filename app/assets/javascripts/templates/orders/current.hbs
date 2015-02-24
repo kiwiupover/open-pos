@@ -1,4 +1,4 @@
-<div class="row" {{bindAttr class="editing:editing"}}>
+<div {{bind-attr class=":row editing:editing"}}>
 	<div class="receipt" >
 		<button {{action editOrder}} class="button small right">Edit</button>
 		<ul class="no-bullet clear line-items row collapse">
@@ -14,7 +14,7 @@
 				Sub Total ${{money cents}}
 			</li>
 			<li class="sub text-right">
-				Tax: ${{money tax}}</br>
+				Tax: ${{money tax}}<br>
 			</li>
 	    <li id="total"><h3>Total <span>{{money total}}</span></h3></li>
 		</ul>

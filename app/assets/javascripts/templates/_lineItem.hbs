@@ -1,4 +1,4 @@
-{{#view Pos.LineItemView contentBinding='lineItem' class='row collapse'}}
+{{#view 'lineItem' contentBinding='lineItem' class='row collapse'}}
   <div class="name columns">
     <h6>{{lineItem.name}}</h6>
   </div>
@@ -7,7 +7,7 @@
   </div>
   {{#if editing}}
     <div class="taxable columns text-right">
-      taxable {{view Ember.Checkbox checkedBinding="lineItem.product.taxable"}}
+      taxable {{view 'checkbox' checkedBinding="lineItem.product.taxable"}}
     </div>
   {{/if}}
   <div class="line-total columns">
