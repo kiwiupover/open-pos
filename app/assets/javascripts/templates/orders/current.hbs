@@ -1,6 +1,6 @@
 <div {{bind-attr class=":row editing:editing"}}>
 	<div class="receipt" >
-		<button {{action editOrder}} class="button small right">Edit</button>
+		<button {{action 'editOrder'}} class="button small right">Edit</button>
 		<ul class="no-bullet clear line-items row collapse">
 			{{#each lineItem in lineItems}}
 				{{partial 'lineItem'}}
@@ -8,7 +8,7 @@
 			{{#if customLineItem}}
 				{{partial "orders/add_custom_form"}}
 			{{else}}
-				<a href="#" {{action setUpCustomLineItem target="controller"}} class='left'>Add Line Item</a>
+				<a href="#" {{action 'setUpCustomLineItem' target="controller"}} class='left'>Add Line Item</a>
 			{{/if}}
 			<li class="sub text-right">
 				Sub Total ${{money cents}}
@@ -19,7 +19,7 @@
 	    <li id="total"><h3>Total <span>{{money total}}</span></h3></li>
 		</ul>
 		<div class="text-center">
-			<button {{action payment}} class="button small">take payment</button>
+			<button {{action 'payment'}} class="button small">take payment</button>
 		</div>
 	</div>
 	<div class="dashboard">
