@@ -34,7 +34,9 @@ group :production do
 end
 
 gem 'ember-rails'
-gem 'ember-source', '~> 1.2.0'
+gem 'ember-source', '~> 1.10'
+gem 'handlebars-source', '~> 2.0.0'
+gem 'active_model_serializers', '~>0.8.0'
 gem 'filepicker-rails'
 
 gem 'thin'
