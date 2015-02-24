@@ -1,6 +1,6 @@
 <h1>Editing <small>{{nameAndPrice}}</small></h1>
 
-<form {{action save on='submit'}}>
+<form {{action 'save' on='submit'}}>
   {{input valueBinding="name" type='text'}}
   {{textarea valueBinding="description"}}
   {{input valueBinding="priceCents" type="text"}}

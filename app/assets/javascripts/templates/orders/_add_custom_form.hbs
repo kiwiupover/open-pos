@@ -7,10 +7,10 @@
       {{view Ember.TextField valueBinding="price" placeholder="Price"}}
     </div>
     <div class="large-3 columns">
-      <button {{action submit}} class="button small">Add</button>
+      <button {{action 'submit'}} class="button small">Add</button>
     </div>
     <div class="large-3 columns text-right">
-      <a href="#" {{action cancelCustomLineItem}}>cancel</a>
+      <a href="#" {{action 'cancelCustomLineItem'}}>cancel</a>
     </div>
   </div>
 </form>
