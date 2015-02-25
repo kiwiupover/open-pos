@@ -16,7 +16,7 @@
         {{input valueBinding="lineItem.priceCents"}}
       {{else}}
         <span class='money'>
-          ${{money lineItem.lineItemTotalCents}}
+          ${{money-display lineItem.lineItemTotalCents}}
         </span>
       {{/if}}
     </h6>
