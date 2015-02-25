@@ -1,3 +1,4 @@
+/* global $ */
 Pos.ApplicationRoute = Ember.Route.extend({
   setupController: function() {
     var categories = this.store.find('category'),

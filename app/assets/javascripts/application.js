@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.foundation.reveal
+//= require lib/jquery.foundation.reveal
 //= require foundation
 //= require lib/accounting
 //= require handlebars

@@ -12,7 +12,7 @@ Pos.LineItem = DS.Model.extend({
   }.property('priceCents', 'quantity'),
 
   taxableTotalCents: function() {
-    taxableLineItems = this.get('lineItems').findProperty('product.taxable', true);
+    var taxableLineItems = this.get('lineItems').findProperty('product.taxable', true);
   }
 
 });
