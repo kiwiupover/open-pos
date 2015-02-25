@@ -7,7 +7,7 @@
 	<div class='twelve columns'>
 		<form>
 			{{view Ember.TextField valueBinding="amountTendered" id="tender-amount" placeholder="The Amount Tendered" required="true"}}
-			<h5>Change Due: {{money changeDue}}</h5>
+			<h5>Change Due: {{money-display changeDue}}</h5>
 	  	<button {{action 'tender' target='controller'}} class="button">Tender</button>
 		</form>
 	</div>
