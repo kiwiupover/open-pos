@@ -25,9 +25,10 @@ Pos.OrderController = Ember.ObjectController.extend({
       var name = this.get('name'),
           price = this.get('price'),
           orderId = this.get('id');
-      priceCents = this._priceInCents(price);
+          priceCents = this._priceInCents(price);
+
       if (price) {
-        lineItem = {
+        var lineItem = {
           name: name,
           priceCents: priceCents,
           quantity: 1,
@@ -82,7 +83,8 @@ Pos.OrderController = Ember.ObjectController.extend({
   }.property('cents', 'tax'),
 
   _priceInCents: function(price) {
-    splitPrice = price.split('.');
+    var splitPrice = price.split('.');
+
     if (splitPrice[1] > 0) {
       return parseInt(splitPrice[0] * 100, 10) + parseInt(splitPrice[1], 10);
     } else {

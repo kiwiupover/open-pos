@@ -8,11 +8,8 @@ Pos.CategoryItemView = Ember.View.extend({
     this.trigger('changeCategory');
   },
 
-  changeCategory: function(e) {
-  	var contentId = this.content.id
-  	this.get('controller').send('changeView', contentId)
+  changeCategory: function() {
+  	var contentId = this.content.id;
+  	this.get('controller').send('changeView', contentId);
   }
 });
-
-
-
