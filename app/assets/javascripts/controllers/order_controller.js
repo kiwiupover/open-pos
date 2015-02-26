@@ -24,7 +24,7 @@ Pos.OrderController = Ember.ObjectController.extend({
     submit: function() {
       var name = this.get('name'),
           price = this.get('price'),
-          orderId = this.get('id');
+          orderId = this.get('id'),
           priceCents = this._priceInCents(price);
 
       if (price) {
@@ -74,7 +74,6 @@ Pos.OrderController = Ember.ObjectController.extend({
   },
 
   tax: function() {
-    var taxableLineItems = this.get('lineItems').findProperty('product.taxable', true);
     return  parseInt(this.get('cents') * 0.095, 10);
   }.property('cents', 'lineItems'),
 

@@ -9,10 +9,6 @@ Pos.LineItem = DS.Model.extend({
   lineItemTotalCents: function() {
     console.log(this.getProperties('name', 'quantity'));
     return parseInt(this.get('priceCents') * this.get('quantity'), 10);
-  }.property('priceCents', 'quantity'),
-
-  taxableTotalCents: function() {
-    var taxableLineItems = this.get('lineItems').findProperty('product.taxable', true);
-  }
+  }.property('priceCents', 'quantity')
 
 });
