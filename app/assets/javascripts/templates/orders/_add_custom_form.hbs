@@ -1,10 +1,10 @@
-<form action addCustom>
+<form {{action 'submit' on='submit'}} addCustom>
   <div class="row">
     <div class="large-8 columns">
-      {{view Ember.TextField valueBinding="name" placeholder="Product Name"}}
+      {{input value=name placeholder="Product Name"}}
     </div>
     <div class="large-4 columns">
-      {{view Ember.TextField valueBinding="price" placeholder="Price"}}
+      {{input value=price placeholder="Price"}}
     </div>
     <div class="large-3 columns">
       <button {{action 'submit'}} class="button small">Add</button>
